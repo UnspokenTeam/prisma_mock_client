@@ -1,0 +1,23 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-py"
+}
+
+model User {
+  id           String    @id @default(uuid()) @map("id")
+  username     String    @map("username")
+  password     String    @map("password")
+  email        String    @unique @map("email")
+  created_at   DateTime  @default(now()) @map("created_at")
+  suspended_at DateTime? @map("suspended_at")
+}
+
+model Token {
+  id      String @id @default(uuid()) @map("id")
+  user_id String @map("user_id")
+  token   String @map("token")
+}

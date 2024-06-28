@@ -6,6 +6,8 @@ authors = ["Nhsdkk <38581029+Nhsdkk@users.noreply.github.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.11"
+pandas = "^2.2.2"
+prisma = "^0.13.1"
 
 
 [build-system]
